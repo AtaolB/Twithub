@@ -32,54 +32,46 @@
                     </div>
                     <div class="p-4 text-black" style="background-color: white;">
                         <div class="d-flex justify-content-end text-center py-1">
-                            @if (@Model.User.Tweets.Count() > 0)
-                            {
-                                <div>
-                                    <p class="mb-1 h3"> @Model.User.Tweets.Count()</p>
-                                    <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="user" asp-action="Details" asp-route-id="@Model.User.Id">Tweets</a>
-                                </div>
-                            }
-                            else
-                            {
-                                <div>
+                            <div>
+                                <p class="mb-1 h3">@Model.User.Tweets.Count()</p>
+                                <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="User" asp-action="Details" asp-route-id="@Model.User.Id">Tweets</a>
+                            </div>
+                            <div>
+                                <p class="mb-1 h3">@Model.User.ReTweets.Count()</p>
+                                <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="User" asp-action="Retweets" asp-route-id="@Model.User.Id">ReTweets</a>
+                            </div>
+                            <div>
+                                <p class="mb-1 h3">@Model.User.Favorites.Count()</p>
+                                <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="User" asp-action="Favorites" asp-route-id="@Model.User.Id">Favorites</a>
+                            </div>
+                            <div>
+                                @if (@Model.Follows.Count() > 0 || Model.Followers == null)
+                                {
+                                    <p class="mb-1 h3">@Model.Follows.Count()</p>
+                                    <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="User" asp-action="Follows" asp-route-id="@Model.User.Id">Follows</a>
+                                }
+                                else
+                                {
                                     <p class="mb-1 h3">0</p>
-                                    <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="user" asp-action="Details" asp-route-id="@Model.User.Id">Tweets</a>
-                                </div>
-                            }
-                            @if (@Model.User.ReTweets.Count() > 0)
-                            {
-                                <div>
-                                    <p class="mb-1 h3"> @Model.User.ReTweets.Count()</p>
-                                    <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="user" asp-action="Retweets" asp-route-id="@Model.User.Id">ReTweets</a>
-                                </div>
-                            }
-                            else
-                            {
-                                <div>
-                                    <p class="mb-1 h3">0</p>
-                                    <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="user" asp-action="Retweets" asp-route-id="@Model.User.Id">ReTweets</a>
+                                    <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="User" asp-action="Follows" asp-route-id="@Model.User.Id">Follows</a>
+                                }
 
-                                </div>
-                            }
-                            @if (@Model.User.Favorites.Count() > 0)
-                            {
-                                <div>
-                                    <p class="mb-1 h3"> @Model.User.Favorites.Count()</p>
-                                    <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="user" asp-action="Favorites" asp-route-id="@Model.User.Id">Favorites</a>
-                                </div>
-                            }
-                            else
-                            {
-                                <div>
+                            </div>
+                            <div>
+                                @if (@Model.Followers.Count() > 0 || Model.Followers == null)
+                                {
+                                    <p class="mb-1 h3">@Model.Followers.Count()</p>
+                                    <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="User" asp-action="Followers" asp-route-id="@Model.User.Id">Followers</a>
+                                }
+                                else
+                                {
                                     <p class="mb-1 h3">0</p>
-                                    <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="user" asp-action="Favorites" asp-route-id="@Model.User.Id">Favorites</a>
-                                </div>
-                            }
-
+                                    <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="User" asp-action="Followers" asp-route-id="@Model.User.Id">Followers</a>
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </section>

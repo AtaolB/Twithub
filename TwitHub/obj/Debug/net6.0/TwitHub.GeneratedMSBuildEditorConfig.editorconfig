@@ -128,12 +128,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxGYXZvcml0ZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Views/User/Follow.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxGb2xsb3cuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Views/User/Followers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxGb2xsb3dlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Views/User/Follows.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxGb2xsb3dzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Views/User/Index.cshtml]

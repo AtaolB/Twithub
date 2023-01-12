@@ -129,16 +129,15 @@ namespace TwitHub.Controllers
         public async Task<IActionResult> Follows(Guid id)
         {
             var user = await _dbContext.Users.FindAsync(id.ToString());
-            var currentuser = await _userManager.GetUserAsync(HttpContext.User);
 
-            var Follow = await _dbContext.FollowMaps.OrderByDescending(x => x.CreatedDate).Where(x => x.SourceApplicationUser.Id == currentuser.Id).ToListAsync();
+            var Follow = await _dbContext.FollowMaps.OrderByDescending(x => x.CreatedDate).Where(x => x.SourceApplicationUser.Id == user.Id).ToListAsync();
             var Model = new UserPageViewModel()
             {
                 User = user,
                 Follows = Follow,
             };
 
-            ViewBag.userid = currentuser.Id;
+            ViewBag.userid = user.Id;
             return View(Model);
         }
 
@@ -146,16 +145,15 @@ namespace TwitHub.Controllers
         public async Task<IActionResult> Followers(Guid id)
         {
             var user = await _dbContext.Users.FindAsync(id.ToString());
-            var currentuser = await _userManager.GetUserAsync(HttpContext.User);
 
-            var Follow = await _dbContext.FollowMaps.OrderByDescending(x => x.CreatedDate).Where(x => x.TargetApplicationUser.Id == currentuser.Id).ToListAsync();
+            var Followers = await _dbContext.FollowMaps.OrderByDescending(x => x.CreatedDate).Where(x => x.TargetApplicationUser.Id == user.Id).ToListAsync();
             var Model = new UserPageViewModel()
             {
                 User = user,
-                Follows = Follow,
+                Followers = Followers,
             };
 
-            ViewBag.userid = currentuser.Id;
+            ViewBag.userid = user.Id;
             return View(Model);
         }
 
