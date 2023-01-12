@@ -18,12 +18,7 @@
                                     Edit profile
                                 </a>
                             }
-                            else
-                            {
-                                <a type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1;">
-                                    Follow
-                                </a>
-                            }
+                            <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="User" asp-action="NewFollow" asp-route-id="@Model.User.Id">Follow</a>
 
                         </div>
                         <div class="ms-3" style="margin-top: 130px;">
