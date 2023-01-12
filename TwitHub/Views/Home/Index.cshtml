@@ -1,0 +1,56 @@
+﻿@using TwitHub.Data.Entities;
+@model IEnumerable<Tweet>
+@{
+    ViewData["Title"] = "TweetHub";
+}
+
+<div>
+    @await Html.PartialAsync("_CreateTweetPartial",(CreateTweetModel)ViewBag.CreateModel)
+</div>
+<br />
+<div>
+    @foreach (var tweet in Model)
+    {
+        await Html.RenderPartialAsync("_TweetPartial", tweet);
+    }
+</div>
+
+@section Scripts
+    {
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $(".btn-delete").click(function () {
+                var tweetId = $(this).attr("data-tweet-id");
+                $.post("/Tweet/Delete/" + tweetId, function (res) {
+                    var existingText = $(".span-delete[data-tweet-id='" + tweetId + "']").text();
+                    window.location.reload();
+                });
+            });
+
+            $(".btn-favorite").click(function () {
+                var tweetId = $(this).attr("data-tweet-id");
+
+                $.post("/Tweet/Favorite/" + tweetId, function (res) {
+                    var existingText = $(".span-fav-count[data-tweet-id='" + tweetId + "']").text();
+                    var newText = res.isDeleted ? parseInt(existingText) - 1 : parseInt(existingText) + 1;
+
+                    $(".span-fav-count[data-tweet-id='" + tweetId + "']").text(newText);
+                });
+            });
+
+            $(".btn-retweet").click(function () {
+                var tweetId = $(this).attr("data-tweet-id");
+
+                $.post("/Tweet/Retweet/" + tweetId, function (res) {
+                    var existingText = $(".span-retweet-count[data-tweet-id='" + tweetId + "']").text();
+                    var newText = res.isDeleted ? parseInt(existingText) - 1 : parseInt(existingText) + 1;
+
+                    $(".span-retweet-count[data-tweet-id='" + tweetId + "']").text(newText);
+                });
+            });
+        });
+
+    </script>
+}

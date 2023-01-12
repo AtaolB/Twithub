@@ -1,0 +1,13 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using TwitHub.Data.Entities
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/user/details/">@User.Identity?.Name!</a>
+        </li>
+    }
+</ul>

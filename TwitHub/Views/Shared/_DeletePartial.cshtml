@@ -1,0 +1,41 @@
+﻿@using TwitHub.Data.Entities;
+@model Tweet
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Delete+@Model.Id">
+    Delete
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="Delete+@Model.Id" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Tweet Delete</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-danger">
+                    <div class="card">
+                        <div class="row g-0">
+                            <div>
+                                <div class="card-body">
+                                    <h5 class="card-title">@Model.ApplicationUser</h5>
+                                    <p class="text-muted">@Model.CreatedDate</p>
+                                    <div class="alert alert-secondary" role="alert">
+                                        <p class="card-text fs-5 fw-normal font-monospace">@Model.Text</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-danger btn-delete" data-tweet-id="@Model.Id">
+                    Delete <span data-tweet-id="@Model.Id" class="badge badge-light span-delete"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

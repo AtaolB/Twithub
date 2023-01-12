@@ -1,0 +1,1 @@
+partial edit ve edit için jquery validation çalışmıyor

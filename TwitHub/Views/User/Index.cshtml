@@ -1,0 +1,87 @@
+﻿@using TwitHub.Models;
+@model UserPageViewModel
+
+<div>
+    @await Html.PartialAsync("_UserPagePartial")
+</div>
+
+@if (Model.Tweets.Count() > 0)
+{
+    @foreach (var tweet in Model.Tweets)
+    {
+        <div class="card">
+            <div class="row g-0">
+                <div class="col-md-2">
+                    <img src="~/img/twithubmain.png" class="userlistimg">
+                </div>
+                <div class="col-md-10">
+                    <div class="card-body">
+                        <h5 class="card-title text-decoration-none" asp-controller="user" asp-action="details" asp-route-id="@Model.User.Id">@tweet.ApplicationUser.UserName</h5>
+                        <p class="text-muted">@tweet.CreatedDate</p>
+
+                        <div class="alert alert-secondary text-decoration-none" role="alert">
+                            <a class="display: block text-decoration-none " asp-controller="tweet" asp-action="details" asp-route-id="@tweet.Id">
+                                <p class="card-text fs-5 fw-normal font-monospace text-decoration-none text-dark">@tweet.Text</p>
+                            </a>
+                        </div>
+
+                        <div class="col-md-12">
+                            @if (Model.User.Id != ViewBag.userid)
+                            {
+                                <button type="submit" class="btn btn-info btn-retweet" data-tweet-id="@tweet.Id">
+                                    Retweet <span data-tweet-id="@tweet.Id" class="badge badge-light span-retweet-count">@tweet.ReTweets.Count</span>
+                                </button>
+                            }
+
+                            <button type="submit" class="btn btn-info btn-favorite" data-tweet-id="@tweet.Id">
+                                Favorite <span data-tweet-id="@tweet.Id" class="badge badge-light span-fav-count">@tweet.Favorites.Count</span>
+                            </button>
+
+                            <a class="btn btn-info" asp-controller="Tweet" asp-action="Details" asp-route-id="@tweet.Id">Details</a>
+
+                            @if (Model.User.Id == ViewBag.userid)
+                            {
+                                <a class="btn btn-info" asp-controller="Tweet" asp-action="Edit" asp-route-id="@tweet.Id">Edit</a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+    }
+}
+else
+{
+    <div class="alert alert-warning" role="alert">Tweet Not Found</div>
+}
+
+@section Scripts
+    {
+    <script type="text/javascript">
+
+            $(".btn-favorite").click(function () {
+                var tweetId = $(this).attr("data-tweet-id");
+
+                $.post("/Tweet/Favorite/" + tweetId, function (res) {
+                    var existingText = $(".span-fav-count[data-tweet-id='" + tweetId + "']").text();
+                    var newText = res.isDeleted ? parseInt(existingText) - 1 : parseInt(existingText) + 1;
+
+                    $(".span-fav-count[data-tweet-id='" + tweetId + "']").text(newText);
+                });
+            });
+
+            $(".btn-retweet").click(function () {
+                var tweetId = $(this).attr("data-tweet-id");
+
+                $.post("/Tweet/Retweet/" + tweetId, function (res) {
+                    var existingText = $(".span-retweet-count[data-tweet-id='" + tweetId + "']").text();
+                    var newText = res.isDeleted ? parseInt(existingText) - 1 : parseInt(existingText) + 1;
+
+                    $(".span-retweet-count[data-tweet-id='" + tweetId + "']").text(newText);
+                });
+            });
+        });
+
+    </script>
+}

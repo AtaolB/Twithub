@@ -1,0 +1,85 @@
+﻿@using TwitHub.Models;
+@model UserPageViewModel
+
+<section class="container d-flex justify-content-center align-items-center">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-lg-9 col-xl-7">
+                <div class="card">
+                    <div class="rounded-top text-white d-flex flex-row" style="background-color: dimgray; height:200px;">
+                        <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                                 alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
+                                 style="width: 150px; z-index: 1">
+                            @if (Model.User.Id == ViewBag.userid)
+                            {
+                                <a type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1;"
+                               asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
+                                    Edit profile
+                                </a>
+                            }
+                            else
+                            {
+                                <a type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1;">
+                                    Follow
+                                </a>
+                            }
+
+                        </div>
+                        <div class="ms-3" style="margin-top: 130px;">
+                            <h5>@Model.User.UserName</h5>
+                        </div>
+                    </div>
+                    <div class="p-4 text-black" style="background-color: white;">
+                        <div class="d-flex justify-content-end text-center py-1">
+                            @if (@Model.User.Tweets.Count() > 0)
+                            {
+                                <div>
+                                    <p class="mb-1 h3"> @Model.User.Tweets.Count()</p>
+                                    <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="user" asp-action="Details" asp-route-id="@Model.User.Id">Tweets</a>
+                                </div>
+                            }
+                            else
+                            {
+                                <div>
+                                    <p class="mb-1 h3">0</p>
+                                    <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="user" asp-action="Details" asp-route-id="@Model.User.Id">Tweets</a>
+                                </div>
+                            }
+                            @if (@Model.User.ReTweets.Count() > 0)
+                            {
+                                <div>
+                                    <p class="mb-1 h3"> @Model.User.ReTweets.Count()</p>
+                                    <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="user" asp-action="Retweets" asp-route-id="@Model.User.Id">ReTweets</a>
+                                </div>
+                            }
+                            else
+                            {
+                                <div>
+                                    <p class="mb-1 h3">0</p>
+                                    <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="user" asp-action="Retweets" asp-route-id="@Model.User.Id">ReTweets</a>
+
+                                </div>
+                            }
+                            @if (@Model.User.Favorites.Count() > 0)
+                            {
+                                <div>
+                                    <p class="mb-1 h3"> @Model.User.Favorites.Count()</p>
+                                    <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="user" asp-action="Favorites" asp-route-id="@Model.User.Id">Favorites</a>
+                                </div>
+                            }
+                            else
+                            {
+                                <div>
+                                    <p class="mb-1 h3">0</p>
+                                    <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="user" asp-action="Favorites" asp-route-id="@Model.User.Id">Favorites</a>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

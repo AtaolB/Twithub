@@ -1,0 +1,23 @@
+﻿@using TwitHub.Models;
+@model CreateTweetModel
+
+<div class="card">
+    <div class="row g-0">
+        <div class="col-md-2">
+            <img src="~/img/twithubmain.png" class="userlistimg">
+        </div>
+        <div class="col-md-10">
+            <form method="post" asp-controller="tweet" asp-action="Create">
+                <div class="form-control">
+                    <label asp-for="Text">Tweet</label>
+                    <textarea asp-for="Text" class="form-control"></textarea>
+                    <span asp-validation-for="Text" class="text-danger"></span>
+                </div>
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="submit" class="btn btn-dark me-md-2 btn-lg">Tweet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+﻿@using TwitHub.Data.Entities;
+@model Tweet
+
+<div class="card">
+    <div class="row g-0">
+        <div class="col-md-2">
+            <img src="~/img/twithubmain.png" class="userlistimg">
+        </div>
+        <div class="col-md-10">
+            <div class="card-body">
+                <h5 class="card-title text-decoration-none" asp-controller="user" asp-action="details" asp-route-id="@Model.ApplicationUser.Id">@Model.ApplicationUser.UserName</h5>
+                <p class="text-muted">@Model.CreatedDate</p>
+
+                <div class="alert alert-secondary" role="alert">
+                    <p class="card-text fs-5 fw-normal font-monospace">@Model.Text</p>
+                </div>
+
+                <div class="col-md-12">
+                    <input type="hidden" asp-for="Id" value="@Model.Id" />
+                    @if (Model.ApplicationUser.Id != ViewBag.userid)
+                    {
+                        <button type="submit" class="btn btn-info btn-retweet" data-tweet-id="@Model.Id">
+                            Retweet <span data-tweet-id="@Model.Id" class="badge badge-light span-retweet-count">@Model.ReTweets.Count</span>
+                        </button>
+                    }
+
+                    <button type="submit" class="btn btn-info btn-favorite" data-tweet-id="@Model.Id">
+                        Favorite
+                        <span data-tweet-id="@Model.Id" class="badge badge-light span-fav-count">@Model.Favorites.Count</span>
+                    </button>
+
+                    @if (Model.ApplicationUser.Id == ViewBag.userid)
+                    {
+                        @await Html.PartialAsync("_EditPartial")
+                        @await Html.PartialAsync("_DeletePartial")
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+    {
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $(".btn-delete").click(function () {
+                var tweetId = $(this).attr("data-tweet-id");
+                $.post("/Tweet/Delete/" + tweetId, function (res) {
+                    var existingText = $(".span-delete[data-tweet-id='" + tweetId + "']").text();
+                    window.location.href = '/home/index';
+                });
+            });
+
+            $(".btn-favorite").click(function () {
+                var tweetId = $(this).attr("data-tweet-id");
+
+                $.post("/Tweet/Favorite/" + tweetId, function (res) {
+                    var existingText = $(".span-fav-count[data-tweet-id='" + tweetId + "']").text();
+                    var newText = res.isDeleted ? parseInt(existingText) - 1 : parseInt(existingText) + 1;
+
+                    $(".span-fav-count[data-tweet-id='" + tweetId + "']").text(newText);
+                });
+            });
+
+            $(".btn-retweet").click(function () {
+                var tweetId = $(this).attr("data-tweet-id");
+
+                $.post("/Tweet/Retweet/" + tweetId, function (res) {
+                    var existingText = $(".span-retweet-count[data-tweet-id='" + tweetId + "']").text();
+                    var newText = res.isDeleted ? parseInt(existingText) - 1 : parseInt(existingText) + 1;
+
+                    $(".span-retweet-count[data-tweet-id='" + tweetId + "']").text(newText);
+                });
+            });
+        });
+
+    </script>
+}
