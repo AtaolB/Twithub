@@ -1,4 +1,5 @@
 ﻿@using TwitHub.Models;
+@using TwitHub.Data.Entities;
 @model UserPageViewModel
 
 <div>
@@ -41,7 +42,8 @@
 
                             @if (Model.User.Id == ViewBag.userid)
                             {
-                                <a class="btn btn-info" asp-controller="Tweet" asp-action="Edit" asp-route-id="@tweet.Id">Edit</a>
+                                @await Html.PartialAsync("_EditPartial", (Tweet)tweet)
+                                @await Html.PartialAsync("_DeletePartial", (Tweet)tweet)
                             }
                         </div>
                     </div>
@@ -59,6 +61,16 @@ else
 @section Scripts
     {
     <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $(".btn-delete").click(function () {
+                var tweetId = $(this).attr("data-tweet-id");
+                $.post("/Tweet/Delete/" + tweetId, function (res) {
+                    var existingText = $(".span-delete[data-tweet-id='" + tweetId + "']").text();
+                    window.location.reload();
+                });
+            });
 
             $(".btn-favorite").click(function () {
                 var tweetId = $(this).attr("data-tweet-id");

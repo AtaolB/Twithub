@@ -11,6 +11,7 @@
                             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
                                  alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
                                  style="width: 150px; z-index: 1">
+
                             @if (Model.User.Id == ViewBag.userid)
                             {
                                 <a type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1;"
@@ -18,55 +19,63 @@
                                     Edit profile
                                 </a>
                             }
-                            <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="User" asp-action="NewFollow" asp-route-id="@Model.User.Id">Follow</a>
+                            else
+                            {
+                                <a type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1;"
+                               asp-controller="user" asp-action="NewFollow" asp-route-itemid="@Model.User.Id">
+                                    Follow
+                                </a>
+                            }
 
                         </div>
+
                         <div class="ms-3" style="margin-top: 130px;">
                             <h5>@Model.User.UserName</h5>
                         </div>
                     </div>
-                    <div class="p-4 text-black" style="background-color: white;">
-                        <div class="d-flex justify-content-end text-center py-1">
-                            <div>
-                                <p class="mb-1 h3">@Model.User.Tweets.Count()</p>
-                                <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="User" asp-action="Details" asp-route-id="@Model.User.Id">Tweets</a>
-                            </div>
-                            <div>
-                                <p class="mb-1 h3">@Model.User.ReTweets.Count()</p>
-                                <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="User" asp-action="Retweets" asp-route-id="@Model.User.Id">ReTweets</a>
-                            </div>
-                            <div>
-                                <p class="mb-1 h3">@Model.User.Favorites.Count()</p>
-                                <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="User" asp-action="Favorites" asp-route-id="@Model.User.Id">Favorites</a>
-                            </div>
-                            <div>
-                                @if (@Model.Follows.Count() > 0 || Model.Followers == null)
-                                {
-                                    <p class="mb-1 h3">@Model.Follows.Count()</p>
-                                    <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="User" asp-action="Follows" asp-route-id="@Model.User.Id">Follows</a>
-                                }
-                                else
-                                {
-                                    <p class="mb-1 h3">0</p>
-                                    <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="User" asp-action="Follows" asp-route-id="@Model.User.Id">Follows</a>
-                                }
 
-                            </div>
+                    <div class="p-4 text-black" style="background-color: white;">
+                        <div class="col d-flex justify-content-end text-center py-1">
                             <div>
-                                @if (@Model.Followers.Count() > 0 || Model.Followers == null)
-                                {
-                                    <p class="mb-1 h3">@Model.Followers.Count()</p>
-                                    <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="User" asp-action="Followers" asp-route-id="@Model.User.Id">Followers</a>
-                                }
-                                else
-                                {
-                                    <p class="mb-1 h3">0</p>
-                                    <a class="btn btn-light text-muted mb-5 text-dark" asp-controller="User" asp-action="Followers" asp-route-id="@Model.User.Id">Followers</a>
-                                }
+                            </div>
+                            <br />
+                            <div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <br />
+
+        <div class="container">
+            <div class="row">
+                <div class="col justify-content-center align-items-center text-center">
+                    <a class="btn btn-dark" asp-controller="User" asp-action="Index" asp-route-id="@Model.User.Id">Tweet</a>
+                    <a class="btn btn-dark" asp-controller="User" asp-action="Retweets" asp-route-id="@Model.User.Id">Retweet</a>
+                    <a class="btn btn-dark" asp-controller="User" asp-action="Favorites" asp-route-id="@Model.User.Id">Favorite</a>
+                    @if (Model.FollowCount > 0)
+                    {
+                        <a class="btn btn-dark" asp-controller="User" asp-action="Follows" asp-route-id="@Model.User.Id">Follows @Model.FollowCount</a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-dark" asp-controller="User" asp-action="Follows" asp-route-id="@Model.User.Id">Follows</a>
+
+                    }
+                    @if (Model.FollowerCount > 0)
+                    {
+                        <a class="btn btn-dark" asp-controller="User" asp-action="Followers" asp-route-id="@Model.User.Id">Followers @Model.FollowCount</a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-dark" asp-controller="User" asp-action="Followers" asp-route-id="@Model.User.Id">Followers</a>
+
+                    }
+                </div>
+            </div>
+        </div>
+
 </section>
+

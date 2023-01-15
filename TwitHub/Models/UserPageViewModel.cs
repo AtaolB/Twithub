@@ -10,5 +10,10 @@ namespace TwitHub.Models
         public IEnumerable<Favorite> Favorites { get; set; }
         public IEnumerable<FollowMap> Follows { get; set; }
         public IEnumerable<FollowMap> Followers { get; set; }
+        public int TweetCount { get; set; }
+        public int ReTweetCount { get; set; }
+        public int FavoriteCount { get; set; }
+        public int FollowCount { get; set; }
+        public int FollowerCount { get; set; }
     }
 }

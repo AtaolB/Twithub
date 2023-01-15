@@ -1,1 +1,3 @@
 partial edit ve edit için jquery validation çalışmıyor
+user sayfası için sayfadaki ana veri haricindekilerin countları gönderilecek
+kullanıcılar username ile kayıt olacak ve user sayfaları username ile çalışacak	https://stackoverflow.com/questions/48080166/how-to-route-a-string-in-net-core

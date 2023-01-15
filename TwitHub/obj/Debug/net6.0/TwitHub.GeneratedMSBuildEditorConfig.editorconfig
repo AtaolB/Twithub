@@ -9,149 +9,149 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TwitHub
 build_property.RootNamespace = TwitHub
-build_property.ProjectDir = C:\Users\Administrator\Desktop\Code\TwitHub\TwitHub\
+build_property.ProjectDir = C:\Users\Administrator\Desktop\Github Repos\Twithub\TwitHub\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Administrator\Desktop\Code\TwitHub\TwitHub
+build_property.MSBuildProjectDirectory = C:\Users\Administrator\Desktop\Github Repos\Twithub\TwitHub
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Areas/Identity/Pages/Account/Login.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Areas/Identity/Pages/Account/Logout.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Areas/Identity/Pages/Account/Manage/Email.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Areas/Identity/Pages/Account/Manage/Email.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Areas/Identity/Pages/Account/Manage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUGVyc29uYWxEYXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Areas/Identity/Pages/_ViewImports.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Views/Home/Index.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Views/Home/Privacy.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Views/Shared/Error.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Views/Shared/_CreateTweetPartial.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Views/Shared/_CreateTweetPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DcmVhdGVUd2VldFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Views/Shared/_DeletePartial.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Views/Shared/_DeletePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9EZWxldGVQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Views/Shared/_EditPartial.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Views/Shared/_EditPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9FZGl0UGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Views/Shared/_TweetPartial.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Views/Shared/_TweetPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ud2VldFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Views/Shared/_UserPageNavPartial.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Views/Shared/_UserPageIndexPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Vc2VyUGFnZUluZGV4UGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Views/Shared/_UserPageNavPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Vc2VyUGFnZU5hdlBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Views/Shared/_UserPagePartial.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Views/Shared/_UserPagePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Vc2VyUGFnZVBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Views/Tweet/Create.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Views/Tweet/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHdlZXRcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Views/Tweet/Details.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Views/Tweet/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHdlZXRcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Views/Tweet/Edit.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Views/Tweet/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHdlZXRcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Views/User/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Views/User/Favorites.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Views/User/Favorites.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxGYXZvcml0ZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Views/User/Followers.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Views/User/Followers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxGb2xsb3dlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Views/User/Follows.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Views/User/Follows.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxGb2xsb3dzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Views/User/Index.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Views/User/ReTweets.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Views/User/ReTweets.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZVR3ZWV0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Views/_ViewImports.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Views/_ViewStart.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Code/TwitHub/TwitHub/Views/Shared/_Layout.cshtml]
+[C:/Users/Administrator/Desktop/Github Repos/Twithub/TwitHub/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-huk1s4r902

@@ -11129,11 +11129,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Code\\TwitHub\\TwitHub\\TwitHub.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Github Repos\\Twithub\\TwitHub\\TwitHub.csproj",
       "projectName": "TwitHub",
-      "projectPath": "C:\\Users\\Administrator\\Desktop\\Code\\TwitHub\\TwitHub\\TwitHub.csproj",
+      "projectPath": "C:\\Users\\Administrator\\Desktop\\Github Repos\\Twithub\\TwitHub\\TwitHub.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Desktop\\Code\\TwitHub\\TwitHub\\obj\\",
+      "outputPath": "C:\\Users\\Administrator\\Desktop\\Github Repos\\Twithub\\TwitHub\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",

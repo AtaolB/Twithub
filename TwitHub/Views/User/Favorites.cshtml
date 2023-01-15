@@ -1,4 +1,5 @@
 ﻿@using TwitHub.Models;
+@using TwitHub.Data.Entities;
 @model UserPageViewModel
 
 <div>
@@ -39,11 +40,6 @@
                                 </button>
 
                                 <a class="btn btn-info" asp-controller="Tweet" asp-action="Details" asp-route-id="@favorite.Tweet.Id">Details</a>
-
-                                @if (Model.User.Id == ViewBag.userid)
-                                {
-                                    <a class="btn btn-info" asp-controller="Tweet" asp-action="Edit" asp-route-id="@favorite.Tweet.Id">Edit</a>
-                                }
 
                             </div>
                         </div>
