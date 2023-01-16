@@ -5,41 +5,22 @@
     @await Html.PartialAsync("_UserPagePartial")
 </div>
 <br>
-@if (Model.FollowerCount>0)
+
+@if (Model.FollowerCount > 0)
 {
     @foreach (var follower in Model.Followers)
     {
         <div class="card">
-            <div class="row g-0">
+            <div class="row">
                 <div class="col-md-2">
                     <img src="~/img/twithubmain.png" class="userlistimg">
                 </div>
-                <div class="col-md-10">
+                <div class="col-md-3">
                     <div class="card-body">
                         <a class="display: block text-decoration-none " asp-controller="user" asp-action="Index" asp-route-id="@follower.SourceApplicationUser.Id">
-                            <h5 class="card-title text-decoration-none text-dark">@follower.SourceApplicationUser.UserName<h5>
+                            <h5 class="card-title text-decoration-none text-dark">@follower.SourceApplicationUser.UserName</h5>
                         </a>
-                        @*
-                <div class="alert alert-secondary text-decoration-none" role="alert">
-                <a class="display: block text-decoration-none " asp-controller="tweet" asp-action="details" asp-route-id="@Model.Id">
-                <p class="card-text fs-5 fw-normal font-monospace text-decoration-none text-dark">@Model.Text</p>
-                </a>
-                </div>
-
-                <div class="col-md-12">
-                <input type="hidden" asp-for="Id" value="@Model.Id" />
-                @if (Model.ApplicationUser.Id != ViewBag.userid)
-                {
-                <button type="submit" class="btn btn-info btn-retweet" data-tweet-id="@Model.Id">
-                Retweet <span data-tweet-id="@Model.Id" class="badge badge-light span-retweet-count">@Model.ReTweets.Count</span>
-                </button>
-                }
-
-                <button type="submit" class="btn btn-info btn-favorite" data-tweet-id="@Model.Id">
-                Favorite <span data-tweet-id="@Model.Id" class="badge badge-light span-fav-count">@Model.Favorites.Count</span>
-                </button>*@
-
-                        @*</div>*@
+                        <p class="text-muted">Follow Time @follower.CreatedDate</p>
                     </div>
                 </div>
             </div>
@@ -49,5 +30,5 @@
 }
 else
 {
-        <div class="alert alert-warning" role="alert">Follower Not Found</div>
+    <div class="alert alert-warning" role="alert">Follower Not Found</div>
 }

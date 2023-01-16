@@ -7,7 +7,9 @@
 <div>
     @await Html.PartialAsync("_CreateTweetPartial",(CreateTweetModel)ViewBag.CreateModel)
 </div>
+
 <br />
+
 <div>
     @foreach (var tweet in Model)
     {

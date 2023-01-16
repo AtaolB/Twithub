@@ -11,6 +11,7 @@ using Microsoft.Data.SqlClient;
 using NuGet.Packaging;
 using Microsoft.AspNetCore.Authorization;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace TwitHub.Controllers
 {
@@ -79,6 +80,9 @@ namespace TwitHub.Controllers
                 var FollowCount = await _dbContext.FollowMaps.Where(x => x.SourceApplicationUser.Id == user.Id).CountAsync();
                 var FollowerCount = await _dbContext.FollowMaps.Where(x => x.TargetApplicationUser.Id == user.Id).CountAsync();
 
+                var followcheck = await _dbContext.FollowMaps
+                    .Where(x => x.SourceApplicationUser.Id == currentuser.Id).Where(x => x.TargetApplicationUser.Id == user.Id).FirstOrDefaultAsync();
+
                 var Model = new UserPageViewModel()
                 {
                     User = user,
@@ -89,6 +93,8 @@ namespace TwitHub.Controllers
 
                 ViewBag.userid = currentuser.Id;
                 ViewBag.Editing = Tweet;
+                ViewBag.CreateModel = new CreateTweetModel();
+                ViewBag.FollowInfo = followcheck;
 
                 return View(Model);
             }
@@ -185,40 +191,45 @@ namespace TwitHub.Controllers
         {
             var user = await _dbContext.Users.FindAsync(id.ToString());
             var currentuser = await _userManager.GetUserAsync(HttpContext.User);
+            var followcheck = await _dbContext.FollowMaps
+                .Where(x => x.SourceApplicationUser.Id == currentuser.Id).Where(x => x.TargetApplicationUser.Id == user.Id).FirstOrDefaultAsync();
 
-            var Follow = await _dbContext.FollowMaps.OrderByDescending(x => x.CreatedDate).Where(x => x.SourceApplicationUser.Id == user.Id).ToListAsync();
-            var Follower = await _dbContext.FollowMaps.OrderByDescending(x => x.CreatedDate).Where(x => x.TargetApplicationUser.Id == user.Id).ToListAsync();
-
-            var Model = new UserPageViewModel()
+            if (id.ToString() != currentuser.Id.ToString() && followcheck == null)
             {
-                User = user,
-                Follows = Follow,
-                Followers = Follower
-            };
+                var newfollow = new FollowMap
+                {
+                    SourceApplicationUser = currentuser,
+                    TargetApplicationUser = user
 
+                };
+                await _dbContext.FollowMaps.AddAsync(newfollow);
+                await _dbContext.SaveChangesAsync();
+            }
 
             ViewBag.userid = currentuser.Id;
-            return View(Model);
+            return RedirectToAction("Index", "User", new { id = id });
         }
 
         public async Task<IActionResult> UnFollow(Guid id)
         {
             var user = await _dbContext.Users.FindAsync(id.ToString());
             var currentuser = await _userManager.GetUserAsync(HttpContext.User);
+            var followcheck = await _dbContext.FollowMaps
+                .Where(x => x.SourceApplicationUser.Id == currentuser.Id).Where(x => x.TargetApplicationUser.Id == user.Id).FirstOrDefaultAsync();
 
-            var Follow = await _dbContext.FollowMaps.OrderByDescending(x => x.CreatedDate).Where(x => x.SourceApplicationUser.Id == user.Id).ToListAsync();
-            var Follower = await _dbContext.FollowMaps.OrderByDescending(x => x.CreatedDate).Where(x => x.TargetApplicationUser.Id == user.Id).ToListAsync();
-
-            var Model = new UserPageViewModel()
+            if (followcheck != null)
             {
-                User = user,
-                Follows = Follow,
-                Followers = Follower
-            };
-
+                _dbContext.FollowMaps.Remove(followcheck);
+                await _dbContext.SaveChangesAsync();
+            }
+            else
+            {
+                ViewBag.userid = currentuser.Id;
+                return RedirectToAction("Index", "User", new { id = id });
+            }
 
             ViewBag.userid = currentuser.Id;
-            return View(Model);
+            return RedirectToAction("Index", "User", new { id = id });
         }
 
     }

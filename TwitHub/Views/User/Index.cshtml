@@ -6,6 +6,13 @@
     @await Html.PartialAsync("_UserPagePartial")
 </div>
 
+@if (Model.User.Id == ViewBag.userid)
+{
+    @await Html.PartialAsync("_CreateTweetPartial",(CreateTweetModel)ViewBag.CreateModel)
+}
+
+<br />
+
 @if (Model.Tweets.Count() > 0)
 {
     @foreach (var tweet in Model.Tweets)

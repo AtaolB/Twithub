@@ -8,39 +8,24 @@
 
 @if (Model.FollowCount > 0)
 {
-    @foreach (var follower in Model.Follows)
+    @foreach (var follow in Model.Follows)
     {
         <div class="card">
-            <div class="row g-0">
+            <div class="row">
                 <div class="col-md-2">
                     <img src="~/img/twithubmain.png" class="userlistimg">
                 </div>
-                <div class="col-md-10">
+                <div class="col-md-3">
                     <div class="card-body">
-                        <a class="display: block text-decoration-none " asp-controller="user" asp-action="Index" asp-route-id="@follower.TargetApplicationUser.Id">
-                            <h5 class="card-title text-decoration-none text-dark">@follower.TargetApplicationUser.UserName<h5>
+                        <a class="display: block text-decoration-none " asp-controller="user" asp-action="Index" asp-route-id="@follow.TargetApplicationUser.Id">
+                            <h5 class="card-title text-decoration-none text-dark">@follow.TargetApplicationUser.UserName</h5>
                         </a>
-                        @*
-                <div class="alert alert-secondary text-decoration-none" role="alert">
-                <a class="display: block text-decoration-none " asp-controller="tweet" asp-action="details" asp-route-id="@Model.Id">
-                <p class="card-text fs-5 fw-normal font-monospace text-decoration-none text-dark">@Model.Text</p>
-                </a>
-                </div>
+                        <p class="text-muted">Follow Time @follow.CreatedDate</p>
 
-                <div class="col-md-12">
-                <input type="hidden" asp-for="Id" value="@Model.Id" />
-                @if (Model.ApplicationUser.Id != ViewBag.userid)
-                {
-                <button type="submit" class="btn btn-info btn-retweet" data-tweet-id="@Model.Id">
-                Retweet <span data-tweet-id="@Model.Id" class="badge badge-light span-retweet-count">@Model.ReTweets.Count</span>
-                </button>
-                }
+                        <input type="hidden" asp-for="@follow.TargetApplicationUser.Id" value="@follow.TargetApplicationUser.Id" />
 
-                <button type="submit" class="btn btn-info btn-favorite" data-tweet-id="@Model.Id">
-                Favorite <span data-tweet-id="@Model.Id" class="badge badge-light span-fav-count">@Model.Favorites.Count</span>
-                </button>*@
+                        <a class="btn btn-info col-md-4 .offset-md-4" asp-controller="user" asp-action="unfollow" asp-route-id="@follow.TargetApplicationUser.Id">Unfollow</a>
 
-                        @*</div>*@
                     </div>
                 </div>
             </div>

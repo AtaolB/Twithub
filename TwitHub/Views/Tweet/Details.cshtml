@@ -8,7 +8,9 @@
         </div>
         <div class="col-md-10">
             <div class="card-body">
-                <h5 class="card-title text-decoration-none" asp-controller="user" asp-action="Index" asp-route-id="@Model.ApplicationUser.Id">@Model.ApplicationUser.UserName</h5>
+                <a class="display: block text-decoration-none " asp-controller="user" asp-action="Index" asp-route-id="@Model.ApplicationUser.Id">
+                    <h5 class="card-title text-decoration-none text-dark">@Model.ApplicationUser.UserName</h5>
+                </a>
                 <p class="text-muted">@Model.CreatedDate</p>
 
                 <div class="alert alert-secondary" role="alert">

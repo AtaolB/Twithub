@@ -36,7 +36,6 @@ namespace TwitHub.Controllers
 
         [Authorize]
         [HttpPost]
-
         public async Task<IActionResult> Create(CreateTweetModel model)
         {
             if (ModelState.IsValid)

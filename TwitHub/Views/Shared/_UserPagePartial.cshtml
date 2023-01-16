@@ -21,10 +21,21 @@
                             }
                             else
                             {
-                                <a type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1;"
-                               asp-controller="user" asp-action="NewFollow" asp-route-itemid="@Model.User.Id">
-                                    Follow
-                                </a>
+                                if (ViewBag.FollowInfo == null)
+                                {
+                                    <a type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1;"
+                               asp-controller="user" asp-action="NewFollow" asp-route-id="@Model.User.Id">
+                                        Follow
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark" style="z-index: 1;"
+                               asp-controller="user" asp-action="UnFollow" asp-route-id="@Model.User.Id">
+                                        UnFollow
+                                    </a>
+                                }
+
                             }
 
                         </div>
@@ -46,12 +57,12 @@
                 </div>
             </div>
         </div>
-        
+
         <br />
 
         <div class="container">
             <div class="row">
-                <div class="col justify-content-center align-items-center text-center">
+                <div class="justify-content-center align-items-center text-center">
                     <a class="btn btn-dark" asp-controller="User" asp-action="Index" asp-route-id="@Model.User.Id">Tweet</a>
                     <a class="btn btn-dark" asp-controller="User" asp-action="Retweets" asp-route-id="@Model.User.Id">Retweet</a>
                     <a class="btn btn-dark" asp-controller="User" asp-action="Favorites" asp-route-id="@Model.User.Id">Favorite</a>
@@ -66,7 +77,7 @@
                     }
                     @if (Model.FollowerCount > 0)
                     {
-                        <a class="btn btn-dark" asp-controller="User" asp-action="Followers" asp-route-id="@Model.User.Id">Followers @Model.FollowCount</a>
+                        <a class="btn btn-dark" asp-controller="User" asp-action="Followers" asp-route-id="@Model.User.Id">Followers @Model.FollowerCount</a>
                     }
                     else
                     {
