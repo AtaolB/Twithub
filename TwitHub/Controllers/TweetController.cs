@@ -4,14 +4,8 @@ using TwitHub.Models;
 using Microsoft.AspNetCore.Identity;
 using TwitHub.Data.Repositories;
 using TwitHub.Data;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Microsoft.Data.SqlClient;
-using Castle.Core.Internal;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
-using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace TwitHub.Controllers
 {
@@ -27,7 +21,6 @@ namespace TwitHub.Controllers
         {
             _dbContext = dbContext;
             _userManager = userManager;
-
             _tweetRepository = tweetRepository;
             _favoriteRepository = favoriteRepository;
         }

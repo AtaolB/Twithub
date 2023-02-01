@@ -2,16 +2,10 @@
 using TwitHub.Data.Entities;
 using TwitHub.Data.Repositories;
 using TwitHub.Data;
-using TwitHub.Data.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.EntityFrameworkCore;
 using TwitHub.Models;
-using Microsoft.Data.SqlClient;
-using NuGet.Packaging;
-using Microsoft.AspNetCore.Authorization;
-using System.Linq;
-using System.Runtime.CompilerServices;
+
 
 namespace TwitHub.Controllers
 {

@@ -6,11 +6,7 @@ using TwitHub.Data.Entities;
 using TwitHub.Data;
 using TwitHub.Models;
 using TwitHub.Data.Repositories;
-using ContosoUniversity.DAL;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Authorization;
-using NuGet.Packaging;
 
 namespace TwitHub.Controllers
 {
@@ -54,13 +50,14 @@ namespace TwitHub.Controllers
 
             var TweetList = _GenericRepository.Listing()
                 .OrderByDescending(x => x.CreatedDate)
-                .Take(10);
+                .Take(100);
 
             var currentuser = await _userManager.GetUserAsync(HttpContext.User);
             ViewBag.userid = currentuser.Id;
             return View(TweetList);
         }
 
+        //TO DO
         public async Task<IActionResult> TweetInfinityListing(int page)
         {
             var TweetList = _GenericRepository.Listing()
@@ -116,21 +113,18 @@ namespace TwitHub.Controllers
                 PhoneNumberConfirmed = true
             };
 
-            await _userManager.CreateAsync(appUser, "Cb123456**");
-            await _userManager.CreateAsync(appUser2, "Cb123456**");
-            await _userManager.CreateAsync(appUser3, "Cb123456**");
+            await _userManager.CreateAsync(appUser, "A.123456");
+            await _userManager.CreateAsync(appUser2, "A.123456");
+            await _userManager.CreateAsync(appUser3, "A.123456");
 
             var currentuser = await _userManager.GetUserAsync(HttpContext.User);
 
-            var t1 = new Tweet { Text = "aq1", ApplicationUser = appUser };
-            var t2 = new Tweet { Text = "aq2", ApplicationUser = appUser2 };
+            var t1 = new Tweet { Text = "Tweet1", ApplicationUser = appUser };
+            var t2 = new Tweet { Text = "Tweet2", ApplicationUser = appUser2 };
             var t3 = _dbContext.Tweets.FirstOrDefault();
 
-            var aq = await _dbContext.Tweets.AddAsync(t1);
-            var aqq = await _dbContext.Tweets.AddAsync(t2);
-
-            var favoritetext1 = new Favorite { ApplicationUser = appUser, Tweet = t3 };
-            var favorite1 = await _dbContext.Favorites.AddAsync(favoritetext1);
+            var test = await _dbContext.Tweets.AddAsync(t1);
+            var test1 = await _dbContext.Tweets.AddAsync(t2);
 
             await _dbContext.FollowMaps.AddAsync(new FollowMap { SourceApplicationUser = currentuser, TargetApplicationUser = appUser2 });
             await _dbContext.FollowMaps.AddAsync(new FollowMap { SourceApplicationUser = currentuser, TargetApplicationUser = appUser });
